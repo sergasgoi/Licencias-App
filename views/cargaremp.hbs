@@ -1,0 +1,30 @@
+<h2>Hola {{usuario}} <a type="submit" class="btn btn-primary" onclick="return confirm('¿Esta seguro que desea salir?')"
+                href='/salir'>Salir</a> <a type="submit" class="btn btn-primary" href='/inicio'>Volver</a>
+</h2>
+<div class="agregar">
+        <form action="/cargaremp" method="post">
+
+                <br>
+                <input maxlength="20" class="form-control" type="text" name="name" id="inputName"
+                        placeholder="Coloque el nombre completo del empleado" />
+                <br>
+                <input maxlength="10" class="form-control" type="number" name="dni" id="inputDni"
+                        placeholder="Coloque numero del dni" />
+                <br>
+
+                <input maxlength="10" class="form-control" type="date" name="date" id="inputDate"
+                        placeholder="" />
+                <br>
+
+                <button class="btn btn-primary" type="submit">Agregar</button>
+
+
+
+
+        </form>
+        <br>
+        {{#if error}}
+        <p>{{message}}</p>
+        {{/if}}
+
+</div>

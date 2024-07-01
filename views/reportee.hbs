@@ -1,0 +1,48 @@
+<h2>Hola {{usuario}} <a type="submit" class="btn btn-primary" onclick="return confirm('¿Esta seguro que desea salir?')"
+                href='/salir'>Salir</a> <a type="submit" class="btn btn-primary" href='/reporte'>Volver</a>
+</h2>
+<div class="agregar">
+        <br>
+        <div class="row justify-content-evenly">
+
+                <br>
+                <H5>Empleado: {{emp.nombre}}, de Dni: {{emp.dni}}</H5>
+                <br>
+                <br>
+                {{#if carg}}
+                <table class="table" id="table">
+                        <thead>
+                                <tr>
+                                        <th scope="col">Tipo De Licencia</th>
+                                        <th scope="col">Fecha Inicio</th>
+                                        <th scope="col">Fecha Fin</th>
+
+                                </tr>
+                        </thead>
+                        {{#each carg}}
+                        <tbody>
+                                <tr>
+                                        <th>{{tipo}}</th>
+                                        <th>{{fecha_i}}</th>
+                                        <th>{{fecha_f}}</th>
+                                </tr>
+
+                        </tbody>
+
+                        {{/each}}
+
+
+                </table>
+                {{else}}
+                <h5>No Existe Ninguna Licencia Cargada</h5>
+                {{/if}}
+
+
+
+        </div>
+        <br>
+        {{#if error}}
+        <p>{{message}}</p>
+        {{/if}}
+
+</div>

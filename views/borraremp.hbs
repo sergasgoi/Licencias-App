@@ -1,0 +1,65 @@
+<h2>
+    Hola {{usuario}}
+    <a type="submit" class="btn btn-primary" onclick="return confirm('¿Esta seguro que desea salir?')"
+        href='/salir'>Salir</a>
+    <a type="submit" class="btn btn-primary" href="/inicio">Volver</a>
+
+</h2>
+
+
+<br>
+<div class="row justify-content-evenly">
+
+
+    <h3>Empleados</h3>
+
+    <div class="pr"></div>
+
+
+    <div class="buscador">
+        <input style="width: 50%; " type="text" id="searchTerm" class="form-control" placeholder="Buscar"
+            onkeyup="doSearch()">
+        <br>
+    </div>
+
+
+    <div class="row justify-content-evenly">
+
+
+        <table class="table" id="table">
+            <thead>
+                <tr>
+                    <th scope="col">Empleado</th>
+                    <th scope="col">Dni</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            {{#each emp}}
+            <tbody>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>{{dni}}</td>
+                    <td>
+                        <a class="producto btn btn-primary"
+                            onclick="return confirm('¿Está seguro que desea borrar el empleado, se borrará también sus licencias?')"
+                            href="/borrarempe/{{id}}"></a>
+                    </td>
+                </tr>
+
+            </tbody>
+
+            {{/each}}
+
+        </table>
+
+
+
+    </div>
+
+
+
+
+</div>
+
+
+<script src="/javascripts/scripts.js"></script>

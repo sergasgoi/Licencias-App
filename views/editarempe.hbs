@@ -1,0 +1,35 @@
+<h2>Hola {{usuario}} <a type="submit" class="btn btn-primary" onclick="return confirm('¿Esta seguro que desea salir?')"
+                href='/salir'>Salir</a> <a type="submit" class="btn btn-primary" href='/editaremp'>Volver</a>
+</h2>
+<div class="agregar">
+        <form action="/editarempe" method="post">
+
+                <input type="hidden" name="id" value="{{empl.id}}" />
+
+                <br>
+                <label for="inputName">Nombre</label>
+                <input maxlength="20" class="form-control" type="text" name="nombre" id="inputName"
+                        value="{{empl.nombre}}" />
+
+                <label for="inputDni">Dni</label>
+                <input maxlength="10" class="form-control" type="number" name="dni" id="inputDni"
+                        value="{{empl.dni}}" />
+
+                <label for="inputFecha">Fecha Inicio:</label>
+                <input maxlength="10" class="form-control" type="date" name="fecha_ingreso" id="inputFecha"
+                        value="{{empl.fecha_i}}" />
+
+                <br>
+
+                <button class="btn btn-primary" type="submit">Editar</button>
+
+
+
+
+        </form>
+        <br>
+        {{#if error}}
+        <p>{{message}}</p>
+        {{/if}}
+
+</div>
