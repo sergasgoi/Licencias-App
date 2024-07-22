@@ -12,12 +12,15 @@
         </div>
         <br>
         <button type="submit" class="btn btn-primary">Entrar</button>
+
+        {{#if error}}
+        <br>
+        <br>
+        <p>Usuario y/o Contraseña Incorrecto/s</p>
+        {{/if}}
+        <br>
+
     </form>
-    {{#if error}}
-    <br>
-    <br>
-    <p>Usuario y/o Contraseña Incorrecto/s</p>
-    {{/if}}
-    <br>
-    
+
+
 </div>
